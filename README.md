@@ -1,166 +1,204 @@
-cat << 'EOF' > README.md
-# Terraform Complete Infrastructure as Code (IaC)
+# 🚀 Terraform AWS EC2 Infrastructure Deployment
 
-This repository demonstrates a complete Infrastructure as Code (IaC) workflow using Terraform to provision and manage cloud infrastructure in an automated and reproducible way.
+A production-style Infrastructure as Code (IaC) project that provisions a complete AWS networking environment and EC2 instance using Terraform.
 
-Instead of manually configuring infrastructure from a cloud console, everything is defined using code, allowing version control, repeatable deployments, and easier infrastructure management.
-
----
-
-## Project Overview
-
-This project shows how DevOps engineers use Terraform to manage infrastructure.
-
-The repository includes Terraform configurations for provisioning and managing cloud resources in an automated and structured way.
-
-Key objectives of this project:
-
-- Automate infrastructure provisioning
-- Implement Infrastructure as Code practices
-- Maintain infrastructure using version control
-- Enable reproducible deployments
-- Demonstrate DevOps workflow for infrastructure
+This project demonstrates how Terraform can automate the provisioning of cloud infrastructure in a clean, scalable, and reproducible way.
 
 ---
 
-## Tech Stack
+# 📽️ Live Infrastructure Deployment Demo
 
-- Terraform
-- Infrastructure as Code (IaC)
-- HashiCorp Configuration Language (HCL)
-- AWS Cloud
-- Git & GitHub
+> This image demonstrates how Terraform provisions AWS infrastructure step-by-step.
 
----
+<img width="2816" height="1536" alt="Gemini_Generated_Image_p71hdmp71hdmp71h" src="https://github.com/user-attachments/assets/478b75a2-3c26-4c2d-b364-e35ea33d119f" />
 
-## Infrastructure Components
 
-The Terraform configuration in this repository provisions cloud infrastructure components such as:
-
-- Virtual Private Cloud (VPC)
-- Subnets
-- Internet Gateway
-- Route Tables
-- Security Groups
-- EC2 Instances
-- Networking configurations
 
 ---
 
-## Repository Structure
+# 🏗️ Architecture Overview
 
-Terraform-Complete-IAC
+The infrastructure created using Terraform includes the following AWS components:
+
+- Custom **VPC**
+- **Public Subnet**
+- **Internet Gateway**
+- **Route Table**
+- **Security Group**
+- **EC2 Instance**
+
+Terraform provisions all these resources automatically using Infrastructure as Code.
+
+---
+
+# ⚙️ Infrastructure Workflow
+
+The deployment process follows this workflow:
+
+```
+Terraform Code
+      │
+      ▼
+AWS Provider Authentication
+      │
+      ▼
+Create VPC
+      │
+      ▼
+Create Public Subnet
+      │
+      ▼
+Attach Internet Gateway
+      │
+      ▼
+Configure Route Table
+      │
+      ▼
+Create Security Group
+      │
+      ▼
+Launch EC2 Instance
+```
+
+---
+
+# 📂 Project Structure
+
+```
+terraform-aws-ec2-project
 │
-├── main.tf
 ├── provider.tf
 ├── variables.tf
+├── vpc.tf
+├── ec2.tf
 ├── outputs.tf
 ├── terraform.tfvars
-├── .gitignore
 └── README.md
+```
+
+### File Explanation
+
+**provider.tf**
+
+Configures the AWS provider and region for Terraform.
+
+**variables.tf**
+
+Contains reusable input variables for infrastructure configuration.
+
+**vpc.tf**
+
+Defines networking infrastructure including:
+- VPC
+- Subnet
+- Internet Gateway
+- Route Tables
+
+**ec2.tf**
+
+Creates the EC2 instance and attaches the security group.
+
+**outputs.tf**
+
+Displays important outputs such as instance public IP.
+
+**terraform.tfvars**
+
+Stores variable values used during deployment.
 
 ---
 
-## Prerequisites
+# 🛠️ Technologies Used
 
-Before using this repository, ensure the following tools are installed:
-
-- Terraform
-- AWS CLI
-- Git
-- AWS credentials configured
-
-Check installations:
-
-terraform -v  
-aws --version  
-git --version  
+- **Terraform**
+- **AWS EC2**
+- **AWS VPC**
+- **Infrastructure as Code (IaC)**
+- **GitHub**
 
 ---
 
-## Setup Instructions
+# 🚀 Deployment Steps
 
-### 1 Clone the Repository
+### 1️⃣ Clone the Repository
 
-git clone https://github.com/Kumar-Devansh/Terraform-Complete-IAC.git  
-cd Terraform-Complete-IAC
+```bash
+git clone https://github.com/yourusername/your-repo-name.git
+cd your-repo-name
+```
 
----
+### 2️⃣ Initialize Terraform
 
-### 2 Initialize Terraform
-
+```bash
 terraform init
+```
 
----
+### 3️⃣ Preview Infrastructure Changes
 
-### 3 Validate Terraform Configuration
-
-terraform validate
-
----
-
-### 4 Preview Infrastructure Changes
-
+```bash
 terraform plan
+```
 
----
+### 4️⃣ Deploy Infrastructure
 
-### 5 Deploy Infrastructure
-
+```bash
 terraform apply
+```
+
+Terraform will now provision the complete AWS infrastructure.
 
 ---
 
-### 6 Destroy Infrastructure
+# 📊 Terraform Outputs
 
-terraform destroy
+After successful deployment Terraform will output:
 
----
-
-## Terraform Concepts Used
-
-Infrastructure as Code  
-Infrastructure resources are defined using configuration files which allows automated and consistent deployments.
-
-Terraform State  
-Terraform maintains a state file that tracks infrastructure resources created by Terraform.
-
-Modular Infrastructure  
-Terraform allows infrastructure components to be reusable using modules.
+- EC2 Public IP
+- Instance ID
+- VPC ID
 
 ---
 
-## Best Practices Implemented
+# 🔐 Security
 
-- Infrastructure managed using version control
-- Declarative infrastructure configuration
-- Repeatable infrastructure deployments
-- Organized Terraform file structure
-- Infrastructure lifecycle management
+The project uses a **Security Group** to allow:
 
----
+- SSH Access (Port 22)
 
-## Future Improvements
-
-- Remote Terraform state (S3 + DynamoDB)
-- Terraform modules
-- CI/CD integration with GitHub Actions or Jenkins
-- Multi environment setup (dev, staging, production)
-- Automated security scanning
+You can modify rules according to your requirements.
 
 ---
 
-## Author
+# 💡 Key Learning Outcomes
 
-Kumar Devansh  
-DevOps Engineer | Cloud | Infrastructure Automation
-
-GitHub: https://github.com/Kumar-Devansh
+- Infrastructure as Code with Terraform
+- AWS networking fundamentals
+- Automating EC2 deployments
+- Modular Terraform configuration
+- Cloud infrastructure automation
 
 ---
 
-## License
+# 📌 Future Improvements
 
-This project is open source and available under the MIT License.
+Possible enhancements for this project:
 
-EOF
+- Add **private subnet**
+- Deploy **Nginx on EC2**
+- Integrate **CI/CD pipeline**
+- Add **Terraform modules**
+- Use **remote backend (S3 + DynamoDB)**
+
+---
+
+# 👨‍💻 Author
+
+**Kumar Devansh**
+
+| DevOps & Cloud Enthusiast
+
+---
+
+# ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub.
