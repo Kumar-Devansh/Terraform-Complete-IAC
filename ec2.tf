@@ -32,6 +32,14 @@ resource "aws_security_group" "my_security_group" {
         description = "Allow HTTP access from anywhere"
     }
 
+    ingress{
+      from_port = 5000
+      to_port = 5000
+      protocol = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+      description = "`Allow Flask access from anywhere"
+    }
+
     ingress {
       from_port = 8080
       to_port = 8080
