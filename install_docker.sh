@@ -22,6 +22,35 @@ docker --version
 docker compose version
 
 # ---------------------------
+# Install Python & ML Dependencies
+# ---------------------------
+sudo apt update -y
+
+# ---------------------------
+# Install Python & Development Tools
+# ---------------------------
+
+sudo apt install -y \
+python3 \
+python3-pip \
+python3.12-venv \
+git
+
+echo "Python Installation Verification"
+python3 --version
+pip3 --version
+
+echo "Git Installation Verification"
+git --version
+
+# Install Gunicorn globally
+sudo pip3 install gunicorn
+
+echo "Gunicorn Verification"
+gunicorn --version
+
+
+# ---------------------------
 # Install Java (required for Jenkins)
 # ---------------------------
 sudo apt update -y
